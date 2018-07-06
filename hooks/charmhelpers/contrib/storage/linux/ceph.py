@@ -1359,6 +1359,8 @@ def is_request_complete_for_rid(request, rid):
                 if request_data.get('request-id'):
                     log('Ignoring legacy broker_rsp without unit key as remote '
                         'service supports unit specific replies', level=DEBUG)
+                    log('Forcibly returns True!', level=INFO)
+                    return True
                 else:
                     log('Using legacy broker_rsp as remote service does not '
                         'supports unit specific replies', level=DEBUG)
